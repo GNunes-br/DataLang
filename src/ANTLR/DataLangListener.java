@@ -98,6 +98,36 @@ public interface DataLangListener extends ParseTreeListener {
 	 */
 	void exitBraces(DataLangParser.BracesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DataLangParser#conditions}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditions(DataLangParser.ConditionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DataLangParser#conditions}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditions(DataLangParser.ConditionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DataLangParser#comma}.
+	 * @param ctx the parse tree
+	 */
+	void enterComma(DataLangParser.CommaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DataLangParser#comma}.
+	 * @param ctx the parse tree
+	 */
+	void exitComma(DataLangParser.CommaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DataLangParser#loops}.
+	 * @param ctx the parse tree
+	 */
+	void enterLoops(DataLangParser.LoopsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DataLangParser#loops}.
+	 * @param ctx the parse tree
+	 */
+	void exitLoops(DataLangParser.LoopsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DataLangParser#token}.
 	 * @param ctx the parse tree
 	 */

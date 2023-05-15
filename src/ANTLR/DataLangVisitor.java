@@ -65,6 +65,24 @@ public interface DataLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBraces(DataLangParser.BracesContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link DataLangParser#conditions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditions(DataLangParser.ConditionsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DataLangParser#comma}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComma(DataLangParser.CommaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DataLangParser#loops}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLoops(DataLangParser.LoopsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link DataLangParser#token}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

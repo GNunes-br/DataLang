@@ -9,9 +9,8 @@ FIM                      : 'FIM';
 
 COMMENT                  : '//';
 
-ID                       : [a-zA-Z]+;
-
 fragment INT             : [0-9]+;
+
 fragment FLOAT           : [0-9]+'.'[0-9]+;
 
 NUMBER                   : INT | FLOAT;
@@ -25,6 +24,13 @@ NONE                     : 'None';
 
 FUNC                     : 'def';
 RETURN                   : 'return';
+
+COND_IF                  : 'if';
+COND_ELIF                : 'elif';
+COND_ELSE                : 'else';
+
+LOOP_WHILE               : 'while';
+LOOP_FOR                 : 'for';
 
 OP_REL                   : '>' | '<' | '>=' | '<=' | '==' | '!=';
 OP_MATH                  : '+' | '-' | '/' | '*';
@@ -40,6 +46,10 @@ CLOSE_SQUARE_BRACKET     : ']';
 OPEN_BRACES              : '{';
 CLOSE_BRACES             : '}';
 
+COMMA                    : ',';
+
+ID                       : [a-zA-Z][a-zA-Z0-9]*;
+
 WS                       : [ \t\n\r]+ -> skip;
 
 keywords                 : IFSULDEMINAS | INICIO | FIM;
@@ -49,4 +59,7 @@ functions                : FUNC | RETURN;
 parentheses              : OPEN_PARENTHESES token? CLOSE_PARENTHESES;
 square_brackets          : OPEN_SQUARE_BRACKET token? CLOSE_SQUARE_BRACKET;
 braces                   : OPEN_BRACES token? CLOSE_BRACES;
-token                    : keywords | comment | expressions | functions | parentheses | square_brackets | braces;
+conditions               : COND_IF | COND_ELIF | COND_ELSE;
+comma                    : COMMA;
+loops                    : LOOP_FOR | LOOP_WHILE;
+token                    : keywords | comment | functions | parentheses | square_brackets | braces | conditions | comma | loops | expressions;
