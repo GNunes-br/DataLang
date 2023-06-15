@@ -7,15 +7,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="fasterxml.jackson.core.databind" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../Libs/antlr-4.12.0-complete.jar!/" />
+          <root url="jar://$MODULE_DIR$/../libs/antlr-4.12.0-complete.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="fasterxml.jackson.core.databind" level="project" />
   </component>
 </module>

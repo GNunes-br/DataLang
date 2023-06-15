@@ -16,7 +16,7 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/DataLang.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\Guilherme Nunes\Development\Repositories\DataLangSDK\src" />
+          <option name="outputDir" value="Z:\java\DataLang\src" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="ANTLR" />
