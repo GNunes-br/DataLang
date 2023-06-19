@@ -6,6 +6,7 @@ rules                    : statement*;
 IFSULDEMINAS             : 'IFSULDEMINAS';
 INICIO                   : 'INICIO';
 FIM                      : 'FIM';
+COMPILADORES             : 'COMPILADORES';
 
 COMMENT                  : '//' ~[\r\n]*;
 
@@ -53,7 +54,7 @@ ID                       : [a-zA-Z][_a-zA-Z0-9]*;
 
 WS                       : [ \t\n\r]+ -> skip;
 
-keywords                 : IFSULDEMINAS | INICIO | FIM;
+keywords                 : COMPILADORES;
 
 index_access             : ID OPEN_SQUARE_BRACKET NUMBER CLOSE_SQUARE_BRACKET
                          | ID OPEN_SQUARE_BRACKET STRING CLOSE_SQUARE_BRACKET;
@@ -98,10 +99,12 @@ loop_for                 : LOOP_FOR ID LOOP_FOR_IN ID block
                          | LOOP_FOR OPEN_PARENTHESES ID LOOP_FOR_IN ID CLOSE_PARENTHESES block;
 loops                    : loop_while | loop_for;
 
-statement                : keywords
+statement                : IFSULDEMINAS INICIO (
+                         | keywords
                          | comment
                          | operations
                          | conditions
                          | functions
                          | loops
-                         | expressions;
+                         | expressions )
+                         FIM;
